@@ -2,9 +2,15 @@
 Matlab algorithms from "Sparse tensor dimensionality reduction with application to clustering functional connectivity"
 
 First you need to download MATLAB Tensor Toolbox Version 2.6 and SPAMS toolbox respectively Here :
+
+
 http://spams-devel.gforge.inria.fr/
+
+
 https://www.sandia.gov/~tgkolda/TensorToolbox/index-2.6.html
-And put both toolbox in the library file
+
+
+And put both toolbox in the library file, N-way toolbox is optional
 
 
 FCMain_model_comparison : Show results from part IV adn V 
