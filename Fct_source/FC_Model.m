@@ -1,4 +1,9 @@
 function T = FC_Model(Nsujet, b,Ptheo)
+%b noise vector 
+%Ptheo 4 cluster corresponding to 3 FC activation and a cluster No
+%activation
+
+
 
 Mat = zeros(66,1000,Nsujet);
 for i =1:Nsujet

@@ -6,7 +6,9 @@
 %5 Appendix b results
 
 %prerequisites
-addpath(genpath('FCTensDec'))
+addpath('Data')
+addpath(genpath('Library'))
+addpath('Fct_source')
 
 
 %%%I
@@ -36,7 +38,7 @@ fg = FC_showResults(Results,b,view);
 %%%Comment the "if 0" to use this part
 
 if 0
-   
+load Ptheo.mat
 NbSeizure = 4; %Select number of seizure
 myb = [1,0.2,1.5,0.3]; %Noise vector : a- Duration ucnertainty 0 or 1, b- Activation error
 % c- Gaussian noise (power), d- Jitter as explained in the paper
@@ -61,6 +63,8 @@ for i = 1:NbRepetition
         end
 end
 fg = FC_showResults(ResultFC,myb,1);
+
+end
 
 %%%III
 %%%
@@ -121,7 +125,7 @@ end
 %%%
 %%%
 
-%Full experiment
+%Retrieve the results of the complete experience
 
 %%%
 %%%
@@ -152,7 +156,38 @@ end
 
 %Appendix B results
 
-
 %%%
 %%%
 %%%Comment the "if 0" to use this part
+
+
+if 0
+load Ptheo.mat
+load bNoiseVector
+NbSeizure = 4;
+
+
+repet = 12;
+iter =100;
+score1 = zeros(repet,iter+1);
+score2 = zeros(repet,iter+1);
+
+   for i =1:repet
+       
+        T = FC_Model(NbSeizure, b(13,:), Ptheo);
+        %T = rand(20,20,20);
+        [~,score1(i,:)] = FC_mHOOIscore(T,4,iter);
+        [~,score2(i,:)] = FC_HOOI(T,4,iter);
+       
+   end
+   
+   
+   S1 = mean(score1,1);
+   S2 = mean(score2,1);
+    
+    plot(S1)
+    hold on 
+    plot(S2)
+end
+
+

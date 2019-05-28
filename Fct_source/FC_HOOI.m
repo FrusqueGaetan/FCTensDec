@@ -1,16 +1,16 @@
-function [F] = FC_HOOI(T,K)
+function [F,score] = FC_HOOI(T,K,kmax)
 
 %Use of the HOOI algorithm provided by Kolda
 
 
-[Tn] = hooi(T,[K,K,1]);
+[Tn,score] = hooi(T,[K,K,1],kmax);
 
 F = Tn{2}*Tn{1};
 
 end
 
 
-function B = hooi(A,R,kmax) 
+function [B,score] = hooi(A,R,kmax) 
 A = tensor(A); 
 N = ndims(A); 
 % Default value 
@@ -20,12 +20,15 @@ end
 % Compute an orthonormal basis for the dominant 
 % Rn-dimensional left singular subspace of 
 % A_(n) (1 <= n <= N). We store its transpose. 
+score = zeros(kmax+1,1);
 for n = 1:N 
     
 [U, ~, ~] = ... 
 svds(double(tenmat(A,n)), R(n)); 
 Ut{n} = U'; 
 end 
+lambda = ttm(A, Ut); 
+score(1) = norm(double(lambda),'fro')^2;
 % Iterate until convergence 
 for k = 1:kmax 
     
@@ -37,9 +40,11 @@ Utilde = ttm(A, Ut, -n);
 svds(double(tenmat(Utilde, n)), R(n)); 
 Ut{n} = W'; 
 end 
+lambda = ttm(A, Ut); 
+score(k+1) = norm(double(lambda),'fro')^2;
 end 
 % Create the core array 
-lambda = ttm(A, Ut); 
+%lambda = ttm(A, Ut); 
 % Create cell array containing U from the cell 
 % array containing its transpose 
 for n = 1:N 
