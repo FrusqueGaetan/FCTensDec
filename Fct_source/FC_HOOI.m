@@ -11,6 +11,7 @@ end
 
 
 function [B,score] = hooi(A,R,kmax) 
+%Code from tensor toolbox 2.6 
 A = tensor(A); 
 N = ndims(A); 
 % Default value 

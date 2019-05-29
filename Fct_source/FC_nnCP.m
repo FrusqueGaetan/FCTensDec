@@ -14,7 +14,7 @@ function [F] = FC_nnCP(T,K)
 end
 
 
-function [A,B,C,Factors,it,err,corcondia] = parafac(X,Fac,Options,const,OldLoad,FixMode,Weights)
+function [A,B,C,err,Factors,it,corcondia] = parafac(X,Fac,Options,const,OldLoad,FixMode,Weights)
 
 
 % PARAFAC multiway parafac model
@@ -754,6 +754,7 @@ while (((f>crit) | (norm(connew-conold)/norm(conold)>MissConvCrit) | Constraints
                 else
                     nerr=sum(sum((X.*Weights-model.*Weights).^2));
                 end
+          
             end
             if nerr>err
                 acc_fail=acc_fail+1;
@@ -800,6 +801,7 @@ while (((f>crit) | (norm(connew-conold)/norm(conold)>MissConvCrit) | Constraints
                 else
                     nerr=sum(sum((Weights(idmiss2).*errX(idmiss2)).^2));
                 end
+
             else
                 if iscell(const)
                     nerr=sum(sum((X-model).^2));
@@ -810,6 +812,7 @@ while (((f>crit) | (norm(connew-conold)/norm(conold)>MissConvCrit) | Constraints
                 else
                     nerr=sum(sum((X.*Weights-model.*Weights).^2));
                 end
+ 
             end
             if nerr>err
                 acc_fail=acc_fail+1;
@@ -1036,7 +1039,7 @@ while (((f>crit) | (norm(connew-conold)/norm(conold)>MissConvCrit) | Constraints
         elseif any(const==4)|any(const==5)
             err=sum(sum(abs(errX(idmiss2(:)))));
         else
-            err=sum(sum((Weights(idmiss2).*errX(idmiss2)).^2));
+            err=sum(sum((Weights(idmiss2).*errX(idmiss2)).^2)); 
         end
     else
         errold=err;
@@ -1049,6 +1052,7 @@ while (((f>crit) | (norm(connew-conold)/norm(conold)>MissConvCrit) | Constraints
         else
             err=sum(sum((Weights.*(X-model)).^2));
         end
+       
     end
     if err/SSX<1000*eps, % Getting close to the machine uncertainty => stop
         disp(' WARNING')

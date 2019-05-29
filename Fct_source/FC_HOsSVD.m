@@ -15,7 +15,8 @@ A = tensor(T);
 [W, ~, ~] = svds(double(tenmat(A,3)), 1); 
 Ut{3} = W';
 
-if (mean(Ut{3})<0)
+if (mean(Ut{3})<0)%Optional, due to the sign incertainty of the SVD in matlab [U,Lambda,V] = SVD(X),
+    %U and V or -V and -U are solutions
 Ut{3} = -W';
 end
 
@@ -39,7 +40,8 @@ for i =1:iter
    CosTheta = abs(acosd(dot(abs(W'),abs(Ut{3}))/(norm(W')*norm(Ut{3}))));
 
    Ut{3} = W'; 
-   if (mean(Ut{3})<0)
+   if (mean(Ut{3})<0)%Optional, due to the sign incertainty of the SVD in matlab [U,Lambda,V] = SVD(X),
+    %U and V or -V and -U are solutions
    Ut{3} = -W';
    end
 
