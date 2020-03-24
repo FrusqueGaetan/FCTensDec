@@ -104,7 +104,7 @@ for StepRep = 1:12%Saving step
                 ResultFC(4,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_nnCP(T,Nfactor),Ptheo);%4
                 ResultFC(5,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_SVD(T,Nfactor),Ptheo);%5
                 ResultFC(6,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_mHOOI(T,Nfactor),Ptheo);%6
-                ResultFC(7,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_sSVD(T,Nfactor,0.1,1),Ptheo);%7
+                ResultFC(7,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_sSVD(T,Nfactor,0.1,1),Ptheo);%6
                 ResultFC(8,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_HOsSVD(T,Nfactor,0.1,4),Ptheo);%8
                 
             end
@@ -174,7 +174,7 @@ score2 = zeros(repet,iter+1);
 
    for i =1:repet
        
-        T = FC_Model(NbSeizure, b(13,:), Ptheo);
+        T = FC_Model(NbSeizure, b(12,:), Ptheo);
         %T = rand(20,20,20);
         [~,score1(i,:)] = FC_mHOOIscore(T,4,iter);
         [~,score2(i,:)] = FC_HOOI(T,4,iter);
