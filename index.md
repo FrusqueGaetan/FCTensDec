@@ -32,8 +32,10 @@ The methods implemented in this library to perform dimensionality reduction are 
 6) Higher Order Sparse Mode Reduction (HOSMR)
 
 ____
+
 [Download all](https://github.com/FrusqueGaetan/FCTensDec/archives/master.zip)
-_____
+
+____
 
 # Overview of the codes provided #
 
