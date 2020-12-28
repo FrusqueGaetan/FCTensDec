@@ -3,7 +3,6 @@ layout: default
 ---
 # Associated publication #
 
-Codes from the article : \
 **Multiplex network inference with sparse tensor decomposition for functional connectivity** [[hal]](https://hal.inria.fr/hal-02531459/file/IEEE-T-SIPN.pdf)\
 [Gaëtan Frusque](https://frusquegaetan.github.io/), [Julien Jung](https://www.researchgate.net/profile/Julien_Jung), [Pierre Borgnat](https://perso.ens-lyon.fr/pierre.borgnat/), [Paulo Gonçalves](http://perso.ens-lyon.fr/paulo.goncalves/),
 IEEE transaction T-SIPN, 03-2020
