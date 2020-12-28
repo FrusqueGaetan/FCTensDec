@@ -33,7 +33,7 @@ The methods implemented in this library to perform dimensionality reduction are 
 
 ____
 
-[Download all](https://github.com/FrusqueGaetan/FCTensDec/archives/master.zip)
+[Download](https://github.com/FrusqueGaetan/FCTensDec/archive/master.zip)
 
 
 # Overview of the codes provided #
