@@ -18,7 +18,7 @@ You need first to download these toolboxes:
 
 * [Tensor Toolbox Version 2.6](https://www.sandia.gov/~tgkolda/TensorToolbox/index-2.6.html)
 
-The methods implemented in this library to perform dimensionality reduction are : 
+The methods implemented in this library to perform dimensionality reduction are :
 
 1) Non Negative matrix Factorisation (NMF)
 
@@ -38,7 +38,7 @@ The methods implemented in this library to perform dimensionality reduction are 
 
 Beside implementations of the dimensionality reduction methods, this main use the following function:
 
-* [FC_Model.m](./Fct_source/FC_Model.m): Creates the FC model in the form of a tensor of size 66 x 1000 x **NbSeizure**. The arguments are **NbSeizure**, **b** the noise vector and **Ptheo** the groud truth clustering (can be modified). 
+* [FC_Model.m](~/Fct_source/FC_Model.m): Creates the FC model in the form of a tensor of size 66 x 1000 x **NbSeizure**. The arguments are **NbSeizure**, **b** the noise vector and **Ptheo** the groud truth clustering (can be modified). 
 * [FC_ScoreExp.m](./Fct_source/FC_ScoreExp.m): Performs the k-means clustering from the reduced FC factor matrix **F** and computes the ARI score between the experimental clustering and the ground truth clustering.
 * [FC_showResults.m](./Fct_source/FC_howResults.m): Shows results with boxplots in a similar fashion than in the paper.
 
@@ -47,9 +47,9 @@ Beside implementations of the dimensionality reduction methods, this main use th
 All 6 methods are named respectively [FC_NMF.m](./Fct_source/FC_NMF.m), [FC_nnCP.m](./Fct_source/FC_nnCP.m), [FC_SVD.m](./Fct_source/FC_SVD.m), [FC_mHOOI.m](./Fct_source/FC_mHOOI.m) (for the HOSVD), [FC_sSVD.m](./Fct_source/FC_sSVD.m), [FC_HOSMR.m](./Fct_source/FC_HOSMR.m). Their arguments are respectively:
 * **T** the dataset presented in the form of a tensor
 * **K** the number of factor wanted for the reduction
-* **lambda1**, **lambda2** (for sSVD and HOSMR), regularisation parameters. 
+* **lambda1**, **lambda2** (for sSVD and HOSMR), regularisation parameters.
 
-Thank you for your interest. 
+Thank you for your interest.
 
 
 
