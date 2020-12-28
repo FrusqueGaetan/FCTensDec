@@ -35,7 +35,6 @@ ____
 
 [Download all](https://github.com/FrusqueGaetan/FCTensDec/archives/master.zip)
 
-____
 
 # Overview of the codes provided #
 
