@@ -31,11 +31,6 @@ The methods implemented in this library to perform dimensionality reduction are 
 
 6) Higher Order Sparse Mode Reduction (HOSMR)
 
-____
-
-[Download](https://github.com/FrusqueGaetan/FCTensDec/archive/master.zip)
-
-
 # Overview of the codes provided #
 
 [FCMain_model_comparison.m](https://github.com/FrusqueGaetan/FCTensDec/blob/master/FCMain_model_comparison.m): Main code to remake the experiment from the article. This file is divided in five parts. I) Show results from the paper from the dataset [Results.mat](https://github.com/FrusqueGaetan/FCTensDec/blob/master/Data/Results.mat). II) Build your own experiment using the model from the paper to compare all methods. III) & IV) Perform the full experiment from the paper. V) Experiment from appendix B.
