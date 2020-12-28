@@ -59,7 +59,7 @@ for i = 1:NbRepetition
                 ResultFC(5,j,1,i) = FC_ScoreExp(FC_SVD(T,FactorVector(j)),myP);%5
                 ResultFC(6,j,1,i) = FC_ScoreExp(FC_mHOOI(T,FactorVector(j)),myP);%6
                 ResultFC(7,j,1,i) = FC_ScoreExp(FC_sSVD(T,FactorVector(j),0.1,1),myP);%7
-                ResultFC(8,j,1,i) = FC_ScoreExp(FC_HOsSVD(T,FactorVector(j),0.1,4),myP);%8
+                ResultFC(8,j,1,i) = FC_ScoreExp(FC_HOSMR(T,FactorVector(j),0.1,4),myP);%8
         end
 end
 fg = FC_showResults(ResultFC,myb,1);
@@ -105,7 +105,7 @@ for StepRep = 1:12%Saving step
                 ResultFC(5,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_SVD(T,Nfactor),Ptheo);%5
                 ResultFC(6,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_mHOOI(T,Nfactor),Ptheo);%6
                 ResultFC(7,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_sSVD(T,Nfactor,0.1,1),Ptheo);%6
-                ResultFC(8,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_HOsSVD(T,Nfactor,0.1,4),Ptheo);%8
+                ResultFC(8,Nfactor,Noise,Repetition) = FC_ScoreExp(FC_HOSMR(T,Nfactor,0.1,4),Ptheo);%8
                 
             end
             

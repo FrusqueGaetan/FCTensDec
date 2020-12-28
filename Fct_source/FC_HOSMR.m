@@ -1,4 +1,4 @@
-function [F,V,W] = FC_HOsSVD(T,K,lambda1,lambda2,iter)
+function [F,V,W] = FC_HOSMR(T,K,lambda1,lambda2,iter)
 
 %Input : 
 %T tensor to reduce

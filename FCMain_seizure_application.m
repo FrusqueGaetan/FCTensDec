@@ -6,7 +6,7 @@ addpath('Fct_source')
 load PLVseizure.mat
 load location.mat
 
-[F,V,W]=FC_HOsSVD(TT,4,1,0.95);%Compute reduction
+[F,V,W]=FC_HOSMR(TT,4,1,0.95);%Compute reduction
 
 
 A = FC_assignment(F,5);%Compute cluster
