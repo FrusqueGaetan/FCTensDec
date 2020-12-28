@@ -38,7 +38,7 @@ The methods implemented in this library to perform dimensionality reduction are 
 
 Beside implementations of the dimensionality reduction methods, this main use the following function:
 
-* [FC_Model.m](~/Fct_source/FC_Model.m): Creates the FC model in the form of a tensor of size 66 x 1000 x **NbSeizure**. The arguments are **NbSeizure**, **b** the noise vector and **Ptheo** the groud truth clustering (can be modified). 
+* [FC_Model.m](../../blob/master/Fct_source/FC_Model.m): Creates the FC model in the form of a tensor of size 66 x 1000 x **NbSeizure**. The arguments are **NbSeizure**, **b** the noise vector and **Ptheo** the groud truth clustering (can be modified). 
 * [FC_ScoreExp.m](./Fct_source/FC_ScoreExp.m): Performs the k-means clustering from the reduced FC factor matrix **F** and computes the ARI score between the experimental clustering and the ground truth clustering.
 * [FC_showResults.m](./Fct_source/FC_howResults.m): Shows results with boxplots in a similar fashion than in the paper.
 
